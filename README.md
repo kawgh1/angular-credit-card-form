@@ -1,5 +1,7 @@
 ### Forms
 
+![example](https://raw.githubusercontent.com/kawgh1/angular-credit-card-form/main/src/example.gif)
+
 - ### Reactive Forms
 
   - Most of the form logic is driven by configuration in a **component class file**
