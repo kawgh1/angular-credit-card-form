@@ -1,0 +1,28 @@
+<div class="field">
+  <label class="label">{{ label }} </label>
+  <div class="control">
+    <input
+      class="input"
+      mask="(000)-000-0000"
+      [formControl]="control"
+      [ngClass]="{ 'is-danger': showErrors() }"
+    />
+  </div>
+  <ng-container *ngIf="showErrors()">
+    <div class="help is-danger" *ngIf="control.errors?.['required']">
+      Value is required
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.['minlength']">
+      Value must be
+      {{ control.errors?.["minlength"].requiredLength }} characters or more
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
+      Value must be
+      {{ control.errors?.["maxlength"].requiredLength }} characters or less
+    </div>
+    <!-- used for regex -->
+    <div class="help is-danger" *ngIf="control.errors?.['pattern']">
+      Invalid format
+    </div>
+  </ng-container>
+</div>
